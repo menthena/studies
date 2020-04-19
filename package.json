@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "typescript": "^3.8.3"
-  }
+  },
+  "name": "studies",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "tsc && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menthena/studies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/menthena/studies/issues"
+  },
+  "homepage": "https://github.com/menthena/studies#readme",
+  "description": ""
 }
