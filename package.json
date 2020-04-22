@@ -5,7 +5,9 @@
   "name": "studies",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "2.0.4"
+  },
   "scripts": {
     "start": "tsc && node dist/index.js"
   },
