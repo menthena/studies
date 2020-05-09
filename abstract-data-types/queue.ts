@@ -1,29 +1,46 @@
+import { SinglyLinkedList, Node } from "./singly-linked-list";
+
 class Queue<T> {
-  list: Array<T> = [];
+  list: SinglyLinkedList<T>;
   constructor(item: T) {
-    this.list.push(item);
+    this.enqueue(item);
   }
   enqueue(item: T) {
-    this.list.push(item);
+    let tail = this.list.head;
+    while (tail && tail.next) {
+      tail = tail.next;
+    }
+    if (tail) {
+      tail.next = new Node(item);
+    }
   }
   dequeue() {
-    return this.list.shift();
+    if (this.list.head) {
+      const head = this.list.head;
+      if (this.list.head.next) {
+        this.list.head = this.list.head.next;
+      } else {
+        this.list.head = null;
+      }
+      return head;
+    }
+    return null;
   }
   isEmpty() {
-    return this.list.length === 0;
+    return this.list.size === 0;
   }
-  front() {
+  peek() {
     if (this.isEmpty()) {
       throw new Error("no elements");
     }
     return this.list[0];
   }
-  printQueue() {
-    this.list.forEach((item) => console.log(item));
+  iterate() {
+    this.list.iterate();
   }
 }
 
 const queue = new Queue<Number>(0);
 queue.enqueue(1);
 queue.dequeue();
-queue.printQueue();
+queue.iterate();
