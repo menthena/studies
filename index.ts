@@ -1,1 +1,1 @@
-import "./strings/lsd-radix";
+import "./algorithms/binary-search/recursive";
